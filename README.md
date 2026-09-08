@@ -82,13 +82,12 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 ---
 
-## 🚀 Compilação e Instalação
+## 🚀 Compilação (Na versão de testes atual se deve apenas usar o just run para testes)
 
 Um [`justfile`](./justfile) está incluído para facilitar as etapas de desenvolvimento e empacotamento com o [just]:
 
 - `just` (ou `just build-release`): Compila o applet com otimizações de release.
 - `just run`: Compila e roda o applet imediatamente.
-- `just install`: Instala os binários, ícones e arquivos de desktop no sistema.
 - `just check`: Executa o linter `clippy` para verificação de boas práticas.
 - `just check-json`: Verificação com saída em JSON (ideal para integração com IDEs / LSP).
 
