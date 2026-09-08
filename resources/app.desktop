@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Full Brightness
+Comment=An application for the COSMIC™ desktop
+Type=Application
+Icon=com.system76.CosmicAppletBrightness
+Exec=full-brightness %F
+Terminal=false
+StartupNotify=true
+Categories=COSMIC
+Keywords=COSMIC
+NoDisplay=true
+X-CosmicApplet=true
+X-CosmicHoverPopup=Auto
+MimeType=
