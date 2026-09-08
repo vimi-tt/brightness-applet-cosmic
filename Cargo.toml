@@ -1,0 +1,42 @@
+[package]
+name = "full-brightness"
+version = "0.1.0"
+edition = "2024"
+license = "MPL-2.0"
+description = "An application for the COSMIC™ desktop"
+repository = "https://github.com/vimi-tt/brightness-applet-cosmic"
+
+[build-dependencies]
+xdgen = "0.1"
+
+[dependencies]
+tokio = { version = "1.52.0", features = ["full"] }
+ddc-hi = "0.4.1"
+ddc-i2c = "0.2.2"
+zbus = { version = "5.19", default-features = false }
+
+
+[dependencies.libcosmic]
+git = "https://github.com/pop-os/libcosmic.git"
+# See https://github.com/pop-os/libcosmic/blob/master/Cargo.toml for available features.
+features = [
+    # Applet support
+    "applet",
+    "applet-token",
+    # Uses cosmic-settings-daemon to watch for config file changes
+    "dbus-config",
+    # Support creating additional application windows.
+    "multi-window",
+    # Uses tokio as the executor for the runtime
+    "tokio",
+    # Add Wayland support to winit
+    "wayland",
+    # Windowing support for X11, Windows, Mac, & Redox
+    "winit",
+]
+
+# Uncomment to test a locally-cloned libcosmic
+# [patch.'https://github.com/pop-os/libcosmic']
+# libcosmic = { path = "../libcosmic" }
+# cosmic-config = { path = "../libcosmic/cosmic-config" }
+# cosmic-theme = { path = "../libcosmic/cosmic-theme" }
